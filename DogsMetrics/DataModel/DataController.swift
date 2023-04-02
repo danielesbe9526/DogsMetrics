@@ -19,6 +19,36 @@ class DataController: ObservableObject {
         }
     }
     
+    static var preview: DataController = {
+        let result = DataController()
+        let context = result.container.viewContext
+        
+        // Dogs
+        let dog = Dog(context: context)
+        dog.id = UUID()
+        dog.name = "Mocked Dog"
+        dog.color = "M"
+        
+        let dogData = DogData(context: context)
+        dogData.date = Date()
+        dogData.weigth = 100
+        dog.addToWeightRecord(dogData)
+        
+        let dogData2 = DogData(context: context)
+        dogData2.date = Date()
+        dogData2.weigth = 150
+        dog.addToWeightRecord(dogData2)
+        
+        do {
+            try context.save()
+            print("Data saved")
+        } catch {
+            print("We could not save the data...")
+        }
+        
+        return result
+    }()
+    
     func save(context: NSManagedObjectContext) {
         do {
             try context.save()

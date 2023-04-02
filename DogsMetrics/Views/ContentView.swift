@@ -10,15 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var dogs: FetchedResults<Dog>
-//    var mockedDogs: [Dog] = []
     
     var body: some View {
-//        NavigationStack {
-//            List(mockedDogs) { dog in
-//                Text(dog.wrappedName)
-//            }
-//        }
-        
         VStack {
             List {
                 ForEach(dogs, id: \.self) { dog in
@@ -43,6 +36,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environment(\.managedObjectContext, DataController.preview.container.viewContext)
     }
 }
