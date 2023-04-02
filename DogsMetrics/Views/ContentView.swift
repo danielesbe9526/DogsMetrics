@@ -12,30 +12,31 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) var dogs: FetchedResults<Dog>
     
     var body: some View {
-        VStack {
+        NavigationStack {
             List {
                 ForEach(dogs, id: \.self) { dog in
-                    Section(dog.wrappedName) {
-                        ForEach(dog.weightRecordArray, id: \.self) { record in
-                            Text("\(record.weigth.formatted()) gr")
-                        }
+                    NavigationLink {
+                        DogDataView(dog: dog)
+                    } label: {
+                        DogRow(dog: dog)
                     }
                 }.onDelete(perform: removeLanguages)
             }
+            .navigationTitle("Puppies")
         }
-        .padding()
     }
     
     func removeLanguages(at offsets: IndexSet) {
         for index in offsets {
             let dog = dogs[index]
-            DataController().delete(context: moc, dog: dog)
+            DataController.shared.delete(context: moc, dog: dog)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, DataController.preview.container.viewContext)
+        ContentView()
+//            .environment(\.managedObjectContext, DataController.shared.container.viewContext)
     }
 }
