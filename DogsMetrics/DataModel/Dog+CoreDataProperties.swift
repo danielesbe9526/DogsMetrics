@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 extension Dog {
 
@@ -16,10 +16,14 @@ extension Dog {
         return NSFetchRequest<Dog>(entityName: "Dog")
     }
 
+    @NSManaged public var colorG: Float
+    @NSManaged public var gender: String?
     @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
     @NSManaged public var image: String?
-    @NSManaged public var color: String?
+    @NSManaged public var name: String?
+    @NSManaged public var colorR: Float
+    @NSManaged public var colorA: Float
+    @NSManaged public var colorB: Float
     @NSManaged public var weightRecord: NSSet?
     
     public var wrappedName: String {
@@ -30,8 +34,17 @@ extension Dog {
         image ?? "Unknown Dog"
     }
     
-    public var wrappedColor: String {
-        color ?? "Unknown Dog"
+    public var wrappedGender: String {
+        gender ?? "Unknown Gender"
+    }
+    
+    public var wrappedColor: UIColor {
+        guard let sp = CGColorSpace(name:CGColorSpace.genericRGBLinear) else { return .black }
+        let comps : [CGFloat] = [CGFloat(colorR), CGFloat(colorG), CGFloat(colorB), CGFloat(colorA)]
+        guard let c = CGColor(colorSpace: sp, components: comps),
+              let sp2 = CGColorSpace(name:CGColorSpace.sRGB),
+              let c2 = c.converted(to: sp2, intent: .relativeColorimetric, options: nil) else { return .black }
+        return UIColor(cgColor: c2)
     }
     
     public var weightRecordArray: [DogData] {

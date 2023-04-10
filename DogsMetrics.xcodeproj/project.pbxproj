@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1163D0AA29DA1D1800E1E423 /* DogDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163D0A929DA1D1800E1E423 /* DogDataView.swift */; };
 		1163D0AC29DA24C000E1E423 /* DogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163D0AB29DA24C000E1E423 /* DogRow.swift */; };
+		119E15A429DA340800734ABB /* AddPuppyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E15A329DA340800734ABB /* AddPuppyView.swift */; };
+		11C47E4A29DA450A009FA8EA /* AddDogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C47E4929DA450A009FA8EA /* AddDogData.swift */; };
 		11D4271529D8DEC1002BB598 /* DogsMetricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4271429D8DEC1002BB598 /* DogsMetricsApp.swift */; };
 		11D4271729D8DEC1002BB598 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4271629D8DEC1002BB598 /* ContentView.swift */; };
 		11D4271929D8DEC1002BB598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D4271829D8DEC1002BB598 /* Assets.xcassets */; };
@@ -22,8 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11236EB829E461CD003D5D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1163D0A929DA1D1800E1E423 /* DogDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDataView.swift; sourceTree = "<group>"; };
 		1163D0AB29DA24C000E1E423 /* DogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogRow.swift; sourceTree = "<group>"; };
+		119E15A329DA340800734ABB /* AddPuppyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPuppyView.swift; sourceTree = "<group>"; };
+		11C47E4929DA450A009FA8EA /* AddDogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogData.swift; sourceTree = "<group>"; };
 		11D4271129D8DEC1002BB598 /* DogsMetrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogsMetrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D4271429D8DEC1002BB598 /* DogsMetricsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsMetricsApp.swift; sourceTree = "<group>"; };
 		11D4271629D8DEC1002BB598 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		11D4271329D8DEC1002BB598 /* DogsMetrics */ = {
 			isa = PBXGroup;
 			children = (
+				11236EB829E461CD003D5D81 /* Info.plist */,
 				11D4271429D8DEC1002BB598 /* DogsMetricsApp.swift */,
 				11D4272929D8E404002BB598 /* Views */,
 				11D4272829D8E3E2002BB598 /* DataModel */,
@@ -104,7 +110,9 @@
 			children = (
 				11D4271629D8DEC1002BB598 /* ContentView.swift */,
 				1163D0AB29DA24C000E1E423 /* DogRow.swift */,
+				119E15A329DA340800734ABB /* AddPuppyView.swift */,
 				1163D0A929DA1D1800E1E423 /* DogDataView.swift */,
+				11C47E4929DA450A009FA8EA /* AddDogData.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +191,8 @@
 				1163D0AA29DA1D1800E1E423 /* DogDataView.swift in Sources */,
 				1163D0AC29DA24C000E1E423 /* DogRow.swift in Sources */,
 				11D4272729D8DF34002BB598 /* DataController.swift in Sources */,
+				11C47E4A29DA450A009FA8EA /* AddDogData.swift in Sources */,
+				119E15A429DA340800734ABB /* AddPuppyView.swift in Sources */,
 				11D4273829D8ED93002BB598 /* DogData+CoreDataProperties.swift in Sources */,
 				11D4271529D8DEC1002BB598 /* DogsMetricsApp.swift in Sources */,
 				11D4273A29D8ED93002BB598 /* Dog+CoreDataProperties.swift in Sources */,
@@ -310,13 +320,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DogsMetrics/DogsMetrics.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DogsMetrics/Preview Content\"";
-				DEVELOPMENT_TEAM = DH2ZLTQ2BC;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WW5K829KP9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DogsMetrics/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Puppys;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -332,8 +347,10 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniel.beltran.DogsMetrics;
+				PRODUCT_BUNDLE_IDENTIFIER = daniel.beltran9526.DogsMetrics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DogsMetricsDevelop;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -348,13 +365,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DogsMetrics/DogsMetrics.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DogsMetrics/Preview Content\"";
-				DEVELOPMENT_TEAM = DH2ZLTQ2BC;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WW5K829KP9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DogsMetrics/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Puppys;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -370,8 +392,10 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniel.beltran.DogsMetrics;
+				PRODUCT_BUNDLE_IDENTIFIER = daniel.beltran9526.DogsMetrics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DogsMetricsDevelop;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
